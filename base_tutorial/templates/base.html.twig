@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <style>
+                body{
+                    background-color: black;
+                    color: darkgreen;
+                }
+                code {
+                    background-color: black!important
+                }
+                a {
+                    background-color: black;
+                    color: indigo;
+                    font-family: fantasy;
+                }
+                    :hover {
+                    color: olivedrab
+                    }
+                a:link:active, a:visited:active {
+                color: orange;
+                }
+
+            </style>
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

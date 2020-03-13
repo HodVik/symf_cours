@@ -22,6 +22,28 @@ class InharitanceEntitiesFixtures extends Fixture
             $author->setName("Author $i");
             $manager->persist($author);
 
+            for ($j=0; $j < 3; $j++) { 
+                $pdf = new Pdf();
+                $pdf->setFilename("Pdf$j");
+                $pdf->setSize(5454);
+                if($j%2==0)
+                    $pdf->setDescription("brief description of the document");
+                $pdf->setOrientation("document");
+                $pdf->setPageNumber($i+$j+1);
+                $pdf->setAuthor($author);
+                $manager->persist($pdf);
+            }
+
+            for ($k=0; $k < 2; $k++) { 
+                $video = new Video();
+                $video->setFilename("Video$k$i");
+                $video->setSize(12435);
+                $video->setDescription("video about video");
+                $video->setFormat("mpeg4");
+                $video->setDuration(60*($k+$i+1));
+                $video->setAuthor($author);
+                $manager->persist($video);
+            }
 
         }
 

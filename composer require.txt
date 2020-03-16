@@ -1,0 +1,22 @@
+composer require symfony/orm-pack \\подключение doctrine + anotations + entity
+composer require symfony/maker	\\пакутное создание через консоль(контроллеры, сушности и т.д.
+composer require logger \\подключение логов
+composer require/asset \\подгрузка вспомогательных файлов(скрипты, стили, медиа айлы и т.д.
+
+###> instalation webpack encore \\ Managing CSS and JavaScript
++++ установка через npm
+npm init \\создание package.json файла с дефолтными установками
+npm install @symfony/webpack-encore --save-dev
+npm install --save jquery
+создать файл webpack.config.js в корне проекта
+https://symfony.com/doc/current/frontend/encore/installation.html
+
+###< instalation webpack encore \\ нужен для подгрузки javascript & css библиотек 
+
+composer require symfony/security-bundle \\ use app variable
+composer require sensio/framework-extra-bundle \\ for use param convertor(for automatically usage doctrine schema)
+composer require orm-fixtures --dev \\ Fixtures are used to load a "fake" set of data into a database
+https://symfony.com/doc/master/bundles/DoctrineFixturesBundle/index.html
+
+composer require profiler \\web-debuger
+composer require symfony/debg-bundle \\ add dump panel to web-debuger

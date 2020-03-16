@@ -7,4 +7,6 @@
 /public/bundles/
 /var/
 /vendor/
+
 ###< symfony/framework-bundle ###
+!/vendor/autoload.php

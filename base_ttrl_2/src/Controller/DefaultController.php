@@ -2,16 +2,22 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Services\MyService;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/default", name="default")
+     * @Route("/", name="default")
      */
-    public function index()
+    public function index(MyService $ms)
     {
+        // $ms->someAction();
+        // $ms->loggerMy();
+
+        \dump($ms->secServ->sayHello());
+
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
         ]);

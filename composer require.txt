@@ -20,3 +20,5 @@ https://symfony.com/doc/master/bundles/DoctrineFixturesBundle/index.html
 
 composer require profiler \\web-debuger
 composer require symfony/debg-bundle \\ add dump panel to web-debuger
+composer require symfony/proxy-manager-bridge \\ for lazy services
+composer require symfony/cache \\ for caching data

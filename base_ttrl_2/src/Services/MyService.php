@@ -2,12 +2,16 @@
 namespace App\Services;
 
 use App\Services\MySecondService;
+use App\Interfaces\ServiceInterface;
+use Doctrine\ORM\Event\PostFlushEventArgs;
 
 
-class MyService{
 
-    public $my;  
-    public $logger;
+class MyService implements ServiceInterface{
+
+    #region
+    // public $my;  
+    // public $logger;
 
     // public function __construct($globalParam, $adminEmail, $param1, $param2){
     //     \dump($globalParam);
@@ -15,22 +19,21 @@ class MyService{
     //     \dump($param1);
     //     \dump($param2);
     // }
-    use OptionalServiceTrait; #__construct be used from OptionalServiceTrait
-    public function __construct($service){
-        #\dump($service); //null - bicouse lazy load
-        $this->secServ = $service;
+    // use OptionalServiceTrait; #__construct be used from OptionalServiceTrait
+    // public function __construct($service){
+    //     #\dump($service); //null - bicouse lazy load
+    //     #$this->secServ = $service;// using lazy load
+    //     #\dump($secondService);
+    // }
 
-        #\dump($secondService);
-    }
+    // public function someAction(){
+    //     \dump($this->service->doSomething());
+    // }
 
-    public function someAction(){
-        \dump($this->service->doSomething());
-    }
-
-    public function loggerMy(){
-        \dump($this->my);
-        \dump($this->logger);
-    }
+    // public function loggerMy(){
+    //     \dump($this->my);
+    //     \dump($this->logger);
+    // }
 
    
     #autowire: true
@@ -43,5 +46,30 @@ class MyService{
     //     #\dump($secondService);
     // }
 
+
+    #using service alias
+    // public function __construct($one)
+    // {
+    //     \dump($one);
+    //     # code...
+    // }
+    
+    #Service tags
+    // public function __construct()
+    // {
+    //     \dump("Hello tags");
+    // }
+    #endregion
+    public function postFlush(PostFlushEventArgs $args)
+    {
+        \dump('postFlush: hello to');
+        \dump($args);
+        # code...
+    }
+
+    public function sayHello()
+    {
+        return 'Hello from MyService';
+    }
 }
 ?>

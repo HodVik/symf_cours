@@ -1,7 +1,9 @@
 <?php
 namespace App\Services;
 
-class MySecondService{
+use App\Interfaces\ServiceInterface;
+
+class MySecondService implements ServiceInterface{
 
     
 
@@ -16,7 +18,7 @@ class MySecondService{
     }
     public function sayHello()
     {
-        return 'hello! from MySecondService';
+        return 'Hello! from MySecondService';
     }
 }
 ?>

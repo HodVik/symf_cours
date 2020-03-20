@@ -36,13 +36,35 @@ services:
     #         # $param2: 'some param 2'
     #         # $adminEmail: '%admin_email%' #use a global variable
 
-    App\Services\MyService:
-        arguments:
-            $service: '@App\Services\MySecondService'
+    #PROPERTY INJECTION AND LAZY SERVICE
+    # App\Services\MyService:
+    #     arguments:
+    #         $service: '@App\Services\MySecondService'
 
-        # properties: 
-        #     my: '@App\Services\MySecondService'
-        #     logger: '@monolog.logger'
+    #     # properties: 
+    #     #     my: '@App\Services\MySecondService'
+    #     #     logger: '@monolog.logger'
 
-    App\Services\MySecondService:
-        lazy: true
+    # App\Services\MySecondService:
+    #     lazy: true
+
+    #SERVICE ALIAS
+    # app.myservice:
+    #     class: App\Services\MyService
+    #     arguments:
+    #         $one: 'somthing at onece'
+    #     public: true
+
+    # App\Services\MyService: '@app.myservice'
+
+    ## SERVICE CONTAINER TAGS
+    # App\Services\MyService:
+    #     tags:
+    #         - { name: doctrine.event_listener, event: postFlush }
+    #         #- { name: kernal.cache_clearer } 
+
+   
+    # App\Cache\MyClearer:
+    #     tags: [kernel.cache_clearer]
+
+    App\Interfaces\ServiceInterface: '@App\Services\MyService'

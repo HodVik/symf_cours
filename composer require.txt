@@ -22,3 +22,4 @@ composer require profiler \\web-debuger
 composer require symfony/debg-bundle \\ add dump panel to web-debuger
 composer require symfony/proxy-manager-bridge \\ for lazy services
 composer require symfony/cache \\ for caching data
+composer require symfony/form \\for using forms

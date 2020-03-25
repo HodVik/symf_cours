@@ -3,13 +3,13 @@
 namespace App\Listeners;
 
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
+use Symfony\Component\HttpKernel\Event\ResponseEvent;
 
-// class KernelResponseListener{
+class KernelResponseListener{
 
-//     public function onKernelResponse(FilterResponseEvent $event){
-//         $response = new Response('dupa');
-//         $event->setResponse($response);
-//     }
+    public function onKernelResponse(ResponseEvent  $event){
+        $response = new Response('dupa');
+        $event->setResponse($response);
+    }
 
-// }
+}

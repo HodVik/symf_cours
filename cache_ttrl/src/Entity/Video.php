@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\VideoRepository")
@@ -18,6 +19,8 @@ class Video
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Non-blank
+     * @Assert\Length(min = 2, max = 30, minMessage = "Video title must be least at {{ limit }} characters long.", maxMessage = "Video title can`t be longer at {{ limit }} characters.")
      */
     private $title;
 
@@ -28,6 +31,8 @@ class Video
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Non-blank
+     * @Assert\Length(min = 2, max = 10)
      */
     private $category;
 

@@ -35,7 +35,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/deform", name="default_form")
+     * @Route("/form", name="default_form")
      */
     public function index1()
     {

@@ -8,29 +8,26 @@ use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 class VideoFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('agreeTerms', CheckboxType::class, array(
+                'label' => ' Agree ?',
+                'mapped' => false,
+            ))
             ->add('title', TextType::class, array(
-                //'data' => 'Example title',
                 'label' => 'Set video title: '
             ))
             ->add('category', TextType::class, array(
-                //'data' => 'Example category',
                 'label' => 'Set category: '
             ))
-            // //it is dinamic parametr
-            // ->add('created_at', DateType::class, array(
-            //     'widget' => 'single_text',
-            //     'label' => 'Set date: ',
-            // ))
             ->add('save', SubmitType::class, array('label' => 'Add video'))
         ;
         
@@ -40,7 +37,10 @@ class VideoFormType extends AbstractType
             if(!$video||null === $video->getId()){
                 $form->add('created_at', DateType::class, array(
                 'widget' => 'single_text',
-                'label' => 'Set date: '));
+                'label' => 'Set date: '))
+                ->add('file', FileType:: class, array(
+                    'label' => 'Video (mp4 file)',
+                ));
             }
         });
     }

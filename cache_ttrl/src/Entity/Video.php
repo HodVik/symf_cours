@@ -36,6 +36,15 @@ class Video
      */
     private $category;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\File(
+     * maxSize = "50M",
+     * mimeTypes = {"video/mp4", "application/pdf"},
+     * )
+     */
+    private $file;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -73,6 +82,18 @@ class Video
     public function setCategory(string $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getFile(): ?string
+    {
+        return $this->file;
+    }
+
+    public function setFile(string $file): self
+    {
+        $this->file = $file;
 
         return $this;
     }

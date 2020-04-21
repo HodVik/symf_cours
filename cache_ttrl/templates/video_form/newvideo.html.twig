@@ -11,7 +11,7 @@
     <h1>Hello,  go add new video! ✅</h1>
     {{ form_start(form) }}
         {{ form_label(form.title) }}
-        {{ form_widget(form.title) }} </br>
+        {{ form_widget(form.title)
         {{ form_label(form.category) }}
         {{ form_widget(form.category) }} </br>
         {% if form.created_at is defined %}

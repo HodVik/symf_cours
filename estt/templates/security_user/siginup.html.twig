@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sigin up{% endblock %}
+
+{% block body %}
+<style>
+    h1 {
+        text-align: center;
+        text-decoration: underline;
+        text-decoration-style: double;
+        text-decoration-color: maroon;
+    }
+    .wrapper { 
+        margin: 2em auto;
+        max-width: 800px;
+        width: 95%; 
+        font-family: sans-serif; 
+    }
+</style>
+
+<div class="wrapper">
+    <h1>Please complete registration</h1>
+    {{ form(regForm) }}    
+</div>
+{% endblock %}

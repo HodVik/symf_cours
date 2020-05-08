@@ -1,7 +1,6 @@
 {
   "name": "estt",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "directories": {
     "test": "tests"
@@ -9,9 +8,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "HodVik",
   "license": "ISC",
   "devDependencies": {
-    "@symfony/webpack-encore": "^0.29.1"
+    "@symfony/webpack-encore": "^0.29.1",
+    "webpack-notifier": "^1.6.0"
+  },
+  "description": "Symfony course",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.5.1",
+    "popper": "^1.0.1"
+  },
+  "repository": {
+    "type": "field"
   }
 }

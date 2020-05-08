@@ -12,7 +12,7 @@ Encore
     // public path used by the web server to access the output path
     .setPublicPath('/build')
     // only needed for CDN's or sub-directory deploy
-    //.setManifestKeyPrefix('build/')
+    // .setManifestKeyPrefix('build/')
 
     /*
      * ENTRY CONFIG
@@ -23,8 +23,8 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addEntry('app', './assets/js/app.js')
-    .addStyleEntry('css/style', ['./build/css/custom.css','./build/css/text.css'])
+    .addEntry('js/app', ['./build/js/app.js',])
+    .addStyleEntry('css/style', ['./build/css/custom.css', './build/css/text.css'])
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
@@ -43,10 +43,10 @@ Encore
      * https://symfony.com/doc/current/frontend.html#adding-more-features
      */
     .cleanupOutputBeforeBuild()
-    .enableBuildNotifications()
+    // .enableBuildNotifications()
     .enableSourceMaps(!Encore.isProduction())
     // enables hashed filenames (e.g. app.abc123.css)
-    .enableVersioning(Encore.isProduction())
+    // .enableVersioning(Encore.isProduction())
 
     // enables @babel/preset-env polyfills
     .configureBabelPresetEnv((config) => {
@@ -62,10 +62,10 @@ Encore
 
     // uncomment to get integrity="..." attributes on your script & link tags
     // requires WebpackEncoreBundle 1.4 or higher
-    //.enableIntegrityHashes(Encore.isProduction())
+    .enableIntegrityHashes(Encore.isProduction())
 
     // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
+    .autoProvidejQuery()
 
     // uncomment if you use API Platform Admin (composer require api-admin)
     //.enableReactPreset()
@@ -77,6 +77,11 @@ module.exports = Encore.getWebpackConfig();
 
 
 
+        // 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'
+        // 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'
+        // 'https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js'
+    
+        // 'https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'
 
 
 

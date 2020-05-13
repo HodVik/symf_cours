@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([["js/app"],{0:function(n,i,o){n.exports=o("dRY7")},dRY7:function(n,i,o){(function(n){n(document).ready((function(){alert("We did it!")}))}).call(this,o("EVdn"))}},[[0,"runtime",0]]]);

@@ -7,9 +7,10 @@ composer require/asset \\подгрузка вспомогательных фа�
 +++ установка через npm
 npm init \\создание package.json файла с дефолтными установками
 npm install @symfony/webpack-encore --save-dev
-npm install --save jquery
-создать файл webpack.config.js в корне проекта
-https://symfony.com/doc/current/frontend/encore/installation.html
+npm install --save jquery 
+composer require symfony/webpack-encore-bundle
+создать файл webpack.config.js в корне проекта (copy from
+https://symfony.com/doc/current/frontend/encore/installation.html)
 
 ###< instalation webpack encore \\ нужен для подгрузки javascript & css библиотек 
 

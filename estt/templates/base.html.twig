@@ -5,13 +5,19 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         
         {% block stylesheets %}
-         <link rel="stylesheet" href="{{ asset('build/css/style.css') }}"/>
+            {{ encore_entry_link_tags('css/style') }}
+            <!-- or renders a link tag (if your module requires any CSS)-->
+            {# <link rel="stylesheet" href="/build/css/style.0772fcf9.css"> #}
         {% endblock %}
     </head>
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}
-        <script src="{{ asset('build/js/app.js') }}"></script>
+            {{ encore_entry_script_tags('js/app') }}
+            <!-- or renders app.js & a webpack runtime.js file -->
+            {# <script src="/build/runtime.518d4a5c.js"></script>
+            <script src="/build/0.08f1fef5.js"></script>
+            <script src="/build/js/app.5c5d76e0.js"></script> #}
         {% endblock %}
     </body>
 </html>

@@ -2,5 +2,8 @@
   "build/0.08f1fef5.js": "/build/0.08f1fef5.js",
   "build/css/style.css": "/build/css/style.0772fcf9.css",
   "build/js/app.js": "/build/js/app.5c5d76e0.js",
-  "build/runtime.js": "/build/runtime.518d4a5c.js"
+  "build/runtime.js": "/build/runtime.518d4a5c.js",
+  "build/bootstrap.css": "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
+  "build/popper.js": "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js",
+  "build/bootstrap.js": "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 }
